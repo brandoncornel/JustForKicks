@@ -6,31 +6,32 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 /**
  * Created by brandoncornel on 6/3/17.
  */
-public class CartPage {
+public class ConfirmAddressPage {
 
     WebDriver driver = null;
     WebDriverWait wait;
 
-    By CHECKOUT_BY = By.xpath("//input[@type='submit' and @value='CHECK OUT' and @name='checkout']");
 
-    //By addToCartButton = By.xpath("//form//input[@type='submit' and contains(@value, 'PURCHASE')]");
+    By CONTINUE_BUTTON_BY = By.xpath("//div[@data-step='shipping_method']//button[@type='submit']");
 
 
-    CartPage(WebDriver driver){
+
+    ConfirmAddressPage(WebDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(this.driver, 5);
     }
 
     public void waitForPage(){
-       wait.until(ExpectedConditions.visibilityOfElementLocated(CHECKOUT_BY));
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(CONTINUE_BUTTON_BY));
     }
 
-    public void checkout(){
-        driver.findElement(CHECKOUT_BY).click();
+    public void confirmAddressPageContinue(){
+        driver.findElement(CONTINUE_BUTTON_BY).click();
     }
+
+
+
 }
