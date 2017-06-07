@@ -15,16 +15,16 @@ import java.util.List;
  */
 public class PaymentPage {
 
-    WebDriver driver = null;
-    WebDriverWait wait;
+    private WebDriver driver = null;
+    private WebDriverWait wait;
 
 
-    By CARD_NUMBER_FIELD_BY = By.xpath("//input[@id='number']");
-    By CARD_NAME_FIELD_BY = By.xpath("//input[@id='name']");
-    By CARD_EXPIRATION_DATE_FIELD_BY = By.xpath("//input[@id='expiry']");
-    By CARD_CVV_FIELD_BY = By.xpath("//input[@id='verification_value']");
-    By COMPLETE_ORDER_BY = By.xpath("//div[@data-step='payment_method']//button[@type='submit']");
-    By CARD_NUMBER_IFRAME_BY = By.xpath("//iframe");
+    private By CARD_NUMBER_FIELD_BY = By.xpath("//input[@id='number']");
+    private By CARD_NAME_FIELD_BY = By.xpath("//input[@id='name']");
+    private By CARD_EXPIRATION_DATE_FIELD_BY = By.xpath("//input[@id='expiry']");
+    private By CARD_CVV_FIELD_BY = By.xpath("//input[@id='verification_value']");
+    private By COMPLETE_ORDER_BY = By.xpath("//div[@data-step='payment_method']//button[@type='submit']");
+    private By CARD_NUMBER_IFRAME_BY = By.xpath("//iframe");
 
 
     PaymentPage(WebDriver driver){

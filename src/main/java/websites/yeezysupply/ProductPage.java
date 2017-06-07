@@ -11,12 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class ProductPage {
 
-    WebDriver driver = null;
-    WebDriverWait wait;
+    private WebDriver driver = null;
+    private WebDriverWait wait;
 
 
-    By SIZE_SELECTION_BY = By.xpath("//form//select");
-    By ADD_TO_CART_BY = By.xpath("//form//input[@type='submit' and contains(@value, 'PURCHASE')]");
+    private By SIZE_SELECTION_BY = By.xpath("//form//select");
+    private By ADD_TO_CART_BY = By.xpath("//form//input[@type='submit' and contains(@value, 'PURCHASE')]");
 
 
     ProductPage(WebDriver driver){

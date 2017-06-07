@@ -17,24 +17,20 @@ import java.util.Set;
  */
 public class CheckoutPage {
 
-    WebDriver driver = null;
-    WebDriverWait wait;
+    private WebDriver driver = null;
+    private WebDriverWait wait;
 
-    By EMAIL_FIELD_BY = By.xpath("//input[@placeholder='Email']");
-    By FIRST_NAME_FIELD_BY = By.xpath("//input[@placeholder='First name']");
-    By LAST_NAME_FIELD_BY = By.xpath("//input[@placeholder='Last name']");
-    By ADDRESS_FIELD_BY = By.xpath("//input[@placeholder='Address']");
-    By APT_SUITE_FIELD_BY = By.xpath("//input[@placeholder='APT/SUITE']");
-    By CITY_FIELD_BY = By.xpath("//input[@placeholder='City']");
-    By ZIP_CODE_FIELD_BY = By.xpath("//input[@placeholder='ZIP CODE']");
-    By PHONE_FIELD_BY = By.xpath("//input[@placeholder='Phone']");
-    By COUNTRY_DROPDOWN_BY = By.xpath("//select[@data-backup='country']");
-    By STATE_DROPDOWN_BY = By.xpath("//select[@data-backup='province']");
-    By CONTINUE_BUTTON_BY = By.xpath("//div[@data-step='contact_information']//button[@type='submit']");
-
-
-    //By addToCartButton = By.xpath("//form//input[@type='submit' and contains(@value, 'PURCHASE')]");
-
+    private By EMAIL_FIELD_BY = By.xpath("//input[@placeholder='Email']");
+    private By FIRST_NAME_FIELD_BY = By.xpath("//input[@placeholder='First name']");
+    private By LAST_NAME_FIELD_BY = By.xpath("//input[@placeholder='Last name']");
+    private By ADDRESS_FIELD_BY = By.xpath("//input[@placeholder='Address']");
+    private By APT_SUITE_FIELD_BY = By.xpath("//input[@placeholder='APT/SUITE']");
+    private By CITY_FIELD_BY = By.xpath("//input[@placeholder='City']");
+    private By ZIP_CODE_FIELD_BY = By.xpath("//input[@placeholder='ZIP CODE']");
+    private By PHONE_FIELD_BY = By.xpath("//input[@placeholder='Phone']");
+    private By COUNTRY_DROPDOWN_BY = By.xpath("//select[@data-backup='country']");
+    private By STATE_DROPDOWN_BY = By.xpath("//select[@data-backup='province']");
+    private By CONTINUE_BUTTON_BY = By.xpath("//div[@data-step='contact_information']//button[@type='submit']");
 
     CheckoutPage(WebDriver driver){
         this.driver = driver;

@@ -11,11 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class ConfirmAddressPage {
 
-    WebDriver driver = null;
-    WebDriverWait wait;
+    private WebDriver driver = null;
+    private WebDriverWait wait;
 
 
-    By CONTINUE_BUTTON_BY = By.xpath("//div[@data-step='shipping_method']//button[@type='submit']");
+    private By CONTINUE_BUTTON_BY = By.xpath("//div[@data-step='shipping_method']//button[@type='submit']");
 
 
 

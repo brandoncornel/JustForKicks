@@ -12,13 +12,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class CartPage {
 
-    WebDriver driver = null;
-    WebDriverWait wait;
+    private WebDriver driver = null;
+    private WebDriverWait wait;
 
-    By CHECKOUT_BY = By.xpath("//input[@type='submit' and @value='CHECK OUT' and @name='checkout']");
-
-    //By addToCartButton = By.xpath("//form//input[@type='submit' and contains(@value, 'PURCHASE')]");
-
+    private By CHECKOUT_BY = By.xpath("//input[@type='submit' and @value='CHECK OUT' and @name='checkout']");
 
     CartPage(WebDriver driver){
         this.driver = driver;

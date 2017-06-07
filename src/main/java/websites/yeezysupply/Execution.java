@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class Execution extends BaseTest{
 
 
-    HashMap userInfo = new HashMap();
+    private HashMap userInfo = new HashMap();
 
     private void populateUserInfo(){
         userInfo.put("Email", "brandbread@gmail.com");
