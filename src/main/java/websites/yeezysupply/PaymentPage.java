@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
@@ -27,9 +26,9 @@ public class PaymentPage {
     private By CARD_NUMBER_IFRAME_BY = By.xpath("//iframe");
 
 
-    PaymentPage(WebDriver driver){
+    PaymentPage(WebDriver driver, int waitTime){
         this.driver = driver;
-        wait = new WebDriverWait(this.driver, 5);
+        wait = new WebDriverWait(this.driver, waitTime);
     }
 
     public void waitForPage(){
@@ -55,7 +54,6 @@ public class PaymentPage {
         driver.findElement(CARD_CVV_FIELD_BY).sendKeys(userInfo.get("CVV").toString());
 
         driver.switchTo().defaultContent();
-        driver.findElement(COMPLETE_ORDER_BY).click();
     }
 
 

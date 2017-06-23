@@ -2,10 +2,10 @@
  * Created by brandoncornel on 5/17/17.
  */
 package BaseTests;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,7 +28,6 @@ public class BaseTest {
 
     }
 
-    @Test
     public void test1(){
         setup("Chrome");
         driver.navigate().to("http://www.facebook.com");

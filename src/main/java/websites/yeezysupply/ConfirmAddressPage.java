@@ -3,7 +3,6 @@ package websites.yeezysupply;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -19,9 +18,9 @@ public class ConfirmAddressPage {
 
 
 
-    ConfirmAddressPage(WebDriver driver){
+    ConfirmAddressPage(WebDriver driver, int waitTime){
         this.driver = driver;
-        wait = new WebDriverWait(this.driver, 5);
+        wait = new WebDriverWait(this.driver, waitTime);
     }
 
     public void waitForPage(){

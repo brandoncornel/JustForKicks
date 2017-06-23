@@ -1,4 +1,4 @@
-package websites.yeezysupply;
+package websites.ruvilla;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,9 +15,10 @@ public class ProductPage {
     private WebDriverWait wait;
 
 
-    private By SIZE_SELECTION_BY = By.xpath("//form//select");
-    private By ADD_TO_CART_BY = By.xpath("//form//input[@type='submit' and contains(@value, 'PURCHASE')]");
-
+    private By SIZE_SELECTION_BY = By.id("attribute196");
+    private By ADD_TO_CART_BY = By.id("product-addtocart-button");
+    private By CART_BY = By.xpath("//header[@id='body-header']//div[@class='header-top-cart']/a");
+    private By FINISHED_ADD_TO_CART_BY = By.xpath("//button[@class='action validation-passed loading loading-done']");
 
     ProductPage(WebDriver driver, int waitTime){
         this.driver = driver;
@@ -32,6 +33,8 @@ public class ProductPage {
         Select dropdown = new Select(driver.findElement(SIZE_SELECTION_BY));
         dropdown.selectByVisibleText(size);
         driver.findElement(ADD_TO_CART_BY).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(FINISHED_ADD_TO_CART_BY));
+        driver.findElement(CART_BY).click();
     }
 
 

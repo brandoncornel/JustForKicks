@@ -31,30 +31,39 @@ public class Execution extends BaseTest{
         userInfo.put("CVV","051");
     }
 
-    @Test(invocationCount = 1)
+    @Test(threadPoolSize = 1, invocationCount = 1)
     public void buyYeezys(){
         populateUserInfo();
         setup("Chrome");
         driver.navigate().to("https://yeezysupply.com/products/womens-tubular-boot-pvc-smoke");
+        //driver.navigate().to("https://yeezysupply.com/pages/footwear");
 
-        ProductPage productPage = new ProductPage(driver);
+        //SneakerCategoryPage sneakerCategoryPage = new SneakerCategoryPage(driver);
+        //sneakerCategoryPage.waitForPage();
+        //sneakerCategoryPage.goToProductPage();
+        int waitTime = 300;
+        ProductPage productPage = new ProductPage(driver, waitTime);
         productPage.waitForPage();
         productPage.addShoeToCart("35");
 
-        CartPage cartPage = new CartPage(driver);
+        CartPage cartPage = new CartPage(driver, waitTime);
         cartPage.waitForPage();
         cartPage.checkout();
 
-        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        CheckoutPage checkoutPage = new CheckoutPage(driver, waitTime);
         checkoutPage.fillOutFormAndCheckout(userInfo);
 
-        ConfirmAddressPage confirmAddressPage = new ConfirmAddressPage(driver);
+        ConfirmAddressPage confirmAddressPage = new ConfirmAddressPage(driver, waitTime);
         confirmAddressPage.waitForPage();
         confirmAddressPage.confirmAddressPageContinue();
 
-        PaymentPage paymentPage = new PaymentPage(driver);
+        PaymentPage paymentPage = new PaymentPage(driver, waitTime);
         paymentPage.waitForPage();
         paymentPage.inputPaymentCardInfo(userInfo);
+
+        Long id = Thread.currentThread().getId();
+        System.out.println("Instance is at payment page " + id);
+
 
     }
 }

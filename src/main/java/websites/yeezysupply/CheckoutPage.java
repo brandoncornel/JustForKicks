@@ -7,9 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 
 /**
@@ -32,9 +29,9 @@ public class CheckoutPage {
     private By STATE_DROPDOWN_BY = By.xpath("//select[@data-backup='province']");
     private By CONTINUE_BUTTON_BY = By.xpath("//div[@data-step='contact_information']//button[@type='submit']");
 
-    CheckoutPage(WebDriver driver){
+    CheckoutPage(WebDriver driver, int waitTime){
         this.driver = driver;
-        wait = new WebDriverWait(this.driver, 5);
+        wait = new WebDriverWait(this.driver, waitTime);
     }
 
     public void waitForPage(){
